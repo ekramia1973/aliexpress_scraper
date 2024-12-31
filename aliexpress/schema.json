@@ -1,0 +1,845 @@
+{
+    "advertising": {
+        "stickyBillboardStatus": 2,
+        "isSecondAdvertisingLayerVisible": false
+    },
+    "insurance": {
+        "estimatedRates": {
+            "data": {},
+            "status": "empty"
+        }
+    },
+    "parkings": {
+        "parkedAds": {
+            "data": {
+                "items": []
+            },
+            "status": "empty"
+        }
+    },
+    "home": {
+        "data": null,
+        "status": "empty"
+    },
+    "shared": {
+        "cookies": [],
+        "filters": {
+            "data": {
+                "dam": "false",
+                "ml": {
+                    "min": "",
+                    "max": "40000"
+                },
+                "ms": [
+                    {
+                        "make": "3500",
+                        "model": "4",
+                        "modelGroup": "",
+                        "modelDescription": ""
+                    }
+                ],
+                "ref": "quickSearch",
+                "s": "Car",
+                "sb": "rel",
+                "vc": "Car"
+            },
+            "chips": {
+                "basicData": [
+                    {
+                        "filterKey": "ms",
+                        "value": {
+                            "make": "3500",
+                            "model": "4",
+                            "modelGroup": "",
+                            "modelDescription": ""
+                        },
+                        "label": "BMW 120",
+                        "section": "basicData",
+                        "removeFilterValue": {
+                            "ms": []
+                        },
+                        "testId": "chip-ms"
+                    },
+                    {
+                        "filterKey": "ml",
+                        "value": {
+                            "min": "",
+                            "max": "40000"
+                        },
+                        "label": "bis 40.000 km",
+                        "section": "basicData",
+                        "removeFilterValue": {
+                            "ml": null
+                        },
+                        "testId": "chip-ml"
+                    }
+                ],
+                "offerDetails": [
+                    {
+                        "filterKey": "dam",
+                        "value": "false",
+                        "label": "Beschädigte Fahrzeuge: Nicht anzeigen",
+                        "section": "offerDetails",
+                        "removeFilterValue": {
+                            "dam": null
+                        },
+                        "testId": "chip-dam"
+                    }
+                ]
+            }
+        },
+        "filtersConfig": {
+            "config": [
+                {
+                    "id": "AD_OPTIONS",
+                    "type": "MULTI",
+                    "param": "ao",
+                    "values": [
+                        {
+                            "value": "PICTURES",
+                            "label": "Inserate mit Bildern"
+                        },
+                        {
+                            "value": "VIDEO",
+                            "label": "Inserate mit Video"
+                        },
+                        {
+                            "value": "PRICE_REDUCED",
+                            "label": "Reduzierter Preis"
+                        }
+                    ]
+                },
+                {
+                    "id": "AIRBAGS",
+                    "type": "SINGLE",
+                    "param": "ab",
+                    "label": "Airbags",
+                    "values": [
+                        {
+                            "value": "DRIVER_AIRBAG",
+                            "label": "Fahrer-Airbag"
+                        },
+                        {
+                            "value": "FRONT_AIRBAGS",
+                            "label": "Front-Airbags"
+                        },
+                        {
+                            "value": "FRONT_AND_SIDE_AIRBAGS",
+                            "label": "Front- und Seiten-Airbags"
+                        },
+                        {
+                            "value": "FRONT_AND_SIDE_AND_MORE_AIRBAGS",
+                            "label": "Front-, Seiten- und weitere Airbags"
+                        }
+                    ]
+                },
+                {
+                    "id": "AVAILABILITY",
+                    "type": "SINGLE",
+                    "param": "av",
+                    "label": "Verfügbarkeit",
+                    "values": [
+                        {
+                            "value": "INSTANT",
+                            "label": "Sofort verfügbar"
+                        },
+                        {
+                            "value": "LATER",
+                            "label": "Mit Lieferzeit"
+                        }
+                    ]
+                },
+                {
+                    "id": "BATTERY",
+                    "type": "MULTI",
+                    "param": "bat",
+                    "label": "Batterie für Elektrofahrzeuge",
+                    "values": [
+                        {
+                            "value": "BATTERY_PURCHASED",
+                            "label": "inklusive"
+                        },
+                        {
+                            "value": "BATTERY_RENTED",
+                            "label": "enthalten\u002FMiete"
+                        },
+                        {
+                            "value": "BATTERY_MISSING",
+                            "label": "ohne Batterie"
+                        }
+                    ]
+                },
+                {
+                    "id": "BATTERY_CAPACITY",
+                    "type": "RANGE",
+                    "param": "bc",
+                    "label": "Batteriekapazität",
+                    "values": [
+                        {
+                            "value": "10",
+                            "label": "10 kWh"
+                        },
+                        {
+                            "value": "20",
+                            "label": "20 kWh"
+                        },
+                        {
+                            "value": "30",
+                            "label": "30 kWh"
+                        },
+                        {
+                            "value": "40",
+                            "label": "40 kWh"
+                        },
+                        {
+                            "value": "50",
+                            "label": "50 kWh"
+                        },
+                        {
+                            "value": "60",
+                            "label": "60 kWh"
+                        },
+                        {
+                            "value": "70",
+                            "label": "70 kWh"
+                        },
+                        {
+                            "value": "80",
+                            "label": "80 kWh"
+                        },
+                        {
+                            "value": "90",
+                            "label": "90 kWh"
+                        },
+                        {
+                            "value": "100",
+                            "label": "100 kWh"
+                        },
+                        {
+                            "value": "110",
+                            "label": "110 kWh"
+                        },
+                        {
+                            "value": "120",
+                            "label": "120 kWh"
+                        },
+                        {
+                            "value": "130",
+                            "label": "130 kWh"
+                        },
+                        {
+                            "value": "140",
+                            "label": "140 kWh"
+                        },
+                        {
+                            "value": "150",
+                            "label": "150 kWh"
+                        }
+                    ]
+                },
+                {
+                    "id": "BENDING_LIGHTS_TYPE",
+                    "type": "MULTI",
+                    "param": "blt",
+                    "label": "Kurvenlicht",
+                    "values": [
+                        {
+                            "value": "ADAPTIVE_BENDING_LIGHTS",
+                            "label": "Adaptives Kurvenlicht"
+                        },
+                        {
+                            "value": "BENDING_LIGHTS",
+                            "label": "Kurvenlicht"
+                        }
+                    ]
+                },
+                {
+                    "id": "BIDIRECTIONAL_CHARGING",
+                    "type": "MULTI",
+                    "param": "fe",
+                    "label": "Bidirektionales Laden"
+                },
+                {
+                    "id": "BREAKDOWN_SERVICE",
+                    "type": "MULTI",
+                    "param": "bds",
+                    "label": "Pannenhilfe",
+                    "values": [
+                        {
+                            "value": "EMERGENCY_WHEEL",
+                            "label": "Notrad"
+                        },
+                        {
+                            "value": "REPAIR_KIT",
+                            "label": "Pannenkit"
+                        },
+                        {
+                            "value": "SPARE_WHEEL",
+                            "label": "Reserverad"
+                        }
+                    ]
+                },
+                {
+                    "id": "CATEGORIES",
+                    "type": "MULTI",
+                    "param": "c",
+                    "label": "Fahrzeugtyp",
+                    "values": [
+                        {
+                            "value": "Cabrio",
+                            "label": "Cabrio\u002FRoadster"
+                        },
+                        {
+                            "value": "OffRoad",
+                            "label": "Geländewagen\u002F Pickup\u002FSUV"
+                        },
+                        {
+                            "value": "SmallCar",
+                            "label": "Kleinwagen"
+                        },
+                        {
+                            "value": "EstateCar",
+                            "label": "Kombi"
+                        },
+                        {
+                            "value": "Limousine",
+                            "label": "Limousine"
+                        },
+                        {
+                            "value": "SportsCar",
+                            "label": "Sportwagen\u002F Coupé"
+                        },
+                        {
+                            "value": "Van",
+                            "label": "Van\u002FMinibus"
+                        },
+                        {
+                            "value": "OtherCar",
+                            "label": "Andere"
+                        }
+                    ]
+                },
+                {
+                    "id": "CHARGE_TIME",
+                    "type": "RANGE_MAX",
+                    "param": "cht",
+                    "label": "Ladedauer (11 kW)",
+                    "values": [
+                        {
+                            "value": "",
+                            "label": "Beliebig"
+                        },
+                        {
+                            "value": ":180",
+                            "label": "Bis zu 3 Stunden"
+                        },
+                        {
+                            "value": ":360",
+                            "label": "Bis zu 6 Stunden"
+                        },
+                        {
+                            "value": ":540",
+                            "label": "Bis zu 9 Stunden"
+                        },
+                        {
+                            "value": ":720",
+                            "label": "Bis zu 12 Stunden"
+                        },
+                        {
+                            "value": ":900",
+                            "label": "Bis zu 15 Stunden"
+                        }
+                    ]
+                },
+                {
+                    "id": "CHARGE_TIME_FAST",
+                    "type": "RANGE_MAX",
+                    "param": "chtf",
+                    "label": "Schnellladezeit (50 kW)",
+                    "values": [
+                        {
+                            "value": "",
+                            "label": "Beliebig"
+                        },
+                        {
+                            "value": ":30",
+                            "label": "Bis zu 30 Minuten"
+                        },
+                        {
+                            "value": ":60",
+                            "label": "Bis zu 1 Stunde"
+                        },
+                        {
+                            "value": ":120",
+                            "label": "Bis zu 2 Stunden"
+                        }
+                    ]
+                },
+                {
+                    "id": "CLIMATISATION",
+                    "type": "SINGLE",
+                    "param": "clim",
+                    "label": "Klimatisierung",
+                    "values": [
+                        {
+                            "value": "NO_CLIMATISATION",
+                            "label": "Keine Klimaanlage oder -automatik"
+                        },
+                        {
+                            "value": "MANUAL_CLIMATISATION",
+                            "label": "Klimaanlage oder -automatik"
+                        },
+                        {
+                            "value": "AUTOMATIC_CLIMATISATION",
+                            "label": "Klimaautomatik"
+                        },
+                        {
+                            "value": "AUTOMATIC_CLIMATISATION_2_ZONES",
+                            "label": "2-Zonen-Klimaautomatik"
+                        },
+                        {
+                            "value": "AUTOMATIC_CLIMATISATION_3_ZONES",
+                            "label": "3-Zonen-Klimaautomatik"
+                        },
+                        {
+                            "value": "AUTOMATIC_CLIMATISATION_4_ZONES",
+                            "label": "4-Zonen-Klimaautomatik"
+                        }
+                    ]
+                },
+                {
+                    "id": "CONDITION",
+                    "type": "SINGLE",
+                    "param": "con",
+                    "label": "Fahrzeugzustand",
+                    "values": [
+                        {
+                            "value": "NEW",
+                            "label": "Neu"
+                        },
+                        {
+                            "value": "USED",
+                            "label": "Gebraucht"
+                        }
+                    ]
+                },
+                {
+                    "id": "CRUISE_CONTROL",
+                    "type": "SINGLE",
+                    "param": "spc",
+                    "label": "Tempomat",
+                    "values": [
+                        {
+                            "value": "CRUISE_CONTROL",
+                            "label": "Tempomat"
+                        },
+                        {
+                            "value": "ADAPTIVE_CRUISE_CONTROL",
+                            "label": "Abstandstempomat"
+                        }
+                    ]
+                },
+                {
+                    "id": "CUBIC_CAPACITY",
+                    "type": "RANGE",
+                    "param": "cc",
+                    "label": "Hubraum",
+                    "values": [
+                        {
+                            "value": "1000"
+                        },
+                        {
+                            "value": "1200"
+                        },
+                        {
+                            "value": "1400"
+                        },
+                        {
+                            "value": "1600"
+                        },
+                        {
+                            "value": "1800"
+                        },
+                        {
+                            "value": "2000"
+                        },
+                        {
+                            "value": "2600"
+                        },
+                        {
+                            "value": "3000"
+                        },
+                        {
+                            "value": "5000"
+                        },
+                        {
+                            "value": "7500"
+                        },
+                        {
+                            "value": "8000"
+                        },
+                        {
+                            "value": "9000"
+                        }
+                    ]
+                },
+                {
+                    "id": "CYLINDER",
+                    "type": "RANGE",
+                    "param": "cy",
+                    "label": "Zylinder",
+                    "values": [
+                        {
+                            "value": "3",
+                            "label": "3"
+                        },
+                        {
+                            "value": "4",
+                            "label": "4"
+                        },
+                        {
+                            "value": "6",
+                            "label": "6"
+                        },
+                        {
+                            "value": "8",
+                            "label": "8"
+                        },
+                        {
+                            "value": "10",
+                            "label": "10"
+                        },
+                        {
+                            "value": "12",
+                            "label": "12"
+                        }
+                    ]
+                },
+                {
+                    "id": "DAMAGE_UNREPAIRED",
+                    "type": "SINGLE",
+                    "param": "dam",
+                    "label": "Beschädigte Fahrzeuge",
+                    "description": {
+                        "title": "Beschädigte Fahrzeuge",
+                        "text": "Fahrzeug mit unrepariertem, erheblichem Schaden, z. B. durch Verkehrsunfall, Brand, Hagel, Wasser, Motor- oder Getriebeschaden. Nicht gemeint ist damit: 1.) normaler Verschleiß; 2.) Bagatellschäden; 3.) ein ehemals verunfalltes, inzwischen aber repariertes Fahrzeug."
+                    },
+                    "values": [
+                        {
+                            "value": "false",
+                            "label": "Nicht anzeigen"
+                        },
+                        {
+                            "value": "true",
+                            "label": "Nur anzeigen"
+                        }
+                    ]
+                },
+                {
+                    "id": "DAYTIME_RUNNING_LAMPS",
+                    "type": "MULTI",
+                    "param": "drl",
+                    "label": "Tagfahrlicht",
+                    "values": [
+                        {
+                            "value": "LED_RUNNING_LIGHTS",
+                            "label": "LED-Tagfahrlicht"
+                        },
+                        {
+                            "value": "DAYTIME_RUNNING_LIGHTS",
+                            "label": "Tagfahrlicht"
+                        }
+                    ]
+                },
+                {
+                    "id": "DOORS",
+                    "type": "SINGLE",
+                    "param": "door",
+                    "label": "Anzahl der Türen",
+                    "values": [
+                        {
+                            "value": "TWO_OR_THREE",
+                            "label": "2\u002F3"
+                        },
+                        {
+                            "value": "FOUR_OR_FIVE",
+                            "label": "4\u002F5"
+                        },
+                        {
+                            "value": "SIX_OR_SEVEN",
+                            "label": "6\u002F7"
+                        }
+                    ]
+                },
+                {
+                    "id": "DRIVE_TYPE",
+                    "type": "SINGLE",
+                    "param": "dt",
+                    "label": "Antriebsart",
+                    "values": [
+                        {
+                            "value": "ALL_WHEEL",
+                            "label": "Allrad"
+                        },
+                        {
+                            "value": "FRONT",
+                            "label": "Frontantrieb"
+                        },
+                        {
+                            "value": "REAR",
+                            "label": "Heckantrieb"
+                        }
+                    ]
+                },
+                {
+                    "id": "EMISSION_CLASS",
+                    "type": "SINGLE",
+                    "param": "emc",
+                    "label": "Schadstoffklasse",
+                    "values": [
+                        {
+                            "value": "EURO1",
+                            "label": "Euro 1"
+                        },
+                        {
+                            "value": "EURO2",
+                            "label": "Euro 2"
+                        },
+                        {
+                            "value": "EURO3",
+                            "label": "Euro 3"
+                        },
+                        {
+                            "value": "EURO4",
+                            "label": "Euro 4"
+                        },
+                        {
+                            "value": "EURO5",
+                            "label": "Euro 5"
+                        },
+                        {
+                            "value": "EURO6",
+                            "label": "Euro 6"
+                        },
+                        {
+                            "value": "EURO6C",
+                            "label": "Euro 6c"
+                        },
+                        {
+                            "value": "EURO6D_TEMP",
+                            "label": "Euro 6d-TEMP"
+                        },
+                        {
+                            "value": "EURO6D",
+                            "label": "Euro 6d"
+                        }
+                    ]
+                },
+                {
+                    "id": "EMISSION_STICKER",
+                    "type": "SINGLE",
+                    "param": "ems",
+                    "label": "Umweltplakette",
+                    "values": [
+                        {
+                            "value": "EMISSIONSSTICKER_NONE",
+                            "label": "1 (Keine)"
+                        },
+                        {
+                            "value": "EMISSIONSSTICKER_RED",
+                            "label": "2 (Rot)"
+                        },
+                        {
+                            "value": "EMISSIONSSTICKER_YELLOW",
+                            "label": "3 (Gelb)"
+                        },
+                        {
+                            "value": "EMISSIONSSTICKER_GREEN",
+                            "label": "4 (Grün)"
+                        }
+                    ]
+                },
+                {
+                    "id": "EV_BIDIRECTIONAL_CHARGING",
+                    "type": "MULTI",
+                    "param": "fe",
+                    "values": [
+                        {
+                            "value": "BIDIRECTIONAL_CHARGING",
+                            "label": "Bidirektionales Laden"
+                        }
+                    ]
+                },
+                {
+                    "id": "EXPORT",
+                    "type": "SINGLE",
+                    "param": "fe",
+                    "label": "Gewerbe, Ex-\u002FImport",
+                    "values": [
+                        {
+                            "value": "NO_EXPORT",
+                            "label": "Nicht anzeigen"
+                        },
+                        {
+                            "value": "EXPORT",
+                            "label": "Nur anzeigen"
+                        }
+                    ]
+                },
+                {
+                    "id": "EXTERIOR_FEATURES",
+                    "type": "MULTI",
+                    "param": "fe",
+                    "label": "Weitere Ausstattung",
+                    "values": [
+                        {
+                            "label": "Abgedunkelte Scheiben",
+                            "value": "TINTED_WINDOWS"
+                        },
+                        {
+                            "value": "ABS",
+                            "label": "ABS"
+                        },
+                        {
+                            "value": "DISTANCE_WARNING_SYSTEM",
+                            "label": "Abstandswarner"
+                        },
+                        {
+                            "value": "DYNAMIC_CHASSIS_CONTROL",
+                            "label": "Adaptives Fahrwerk"
+                        },
+                        {
+                            "value": "FOUR_WHEEL_DRIVE",
+                            "label": "Allradantrieb"
+                        },
+                        {
+                            "value": "ALL_SEASON_TIRES",
+                            "label": "Allwetterreifen"
+                        },
+                        {
+                            "value": "HEATED_WINDSHIELD",
+                            "label": "Beheizbare Frontscheibe"
+                        },
+                        {
+                            "value": "HILL_START_ASSIST",
+                            "label": "Berganfahrassistent",
+                            "param": "drl"
+                        },
+                        {
+                            "value": "GLARE_FREE_HIGH_BEAM",
+                            "label": "Blendfreies Fernlicht"
+                        },
+                        {
+                            "value": "ROOF_RAILS",
+                            "label": "Dachreling"
+                        },
+                        {
+                            "value": "ELECTRIC_TAILGATE",
+                            "label": "Elektr. Heckklappe"
+                        },
+                        {
+                            "value": "IMMOBILIZER",
+                            "label": "Elektr. Wegfahrsperre"
+                        },
+                        {
+                            "value": "ESP",
+                            "label": "ESP"
+                        },
+                        {
+                            "value": "FOLDING_ROOF",
+                            "label": "Faltdach"
+                        },
+                        {
+                            "value": "HIGH_BEAM_ASSIST",
+                            "label": "Fernlichtassistent"
+                        },
+                        {
+                            "value": "SPEED_LIMITER",
+                            "label": "Geschwindigkeits- begrenzungsanlage"
+                        },
+                        {
+                            "value": "ALLOY_WHEELS",
+                            "label": "Leichtmetallfelgen"
+                        },
+                        {
+                            "value": "LIGHT_SENSOR",
+                            "label": "Lichtsensor"
+                        },
+                        {
+                            "value": "AIR_SUSPENSION",
+                            "label": "Luftfederung"
+                        },
+                        {
+                            "value": "NIGHT_VISION_ASSIST",
+                            "label": "Nachtsichtassistent"
+                        },
+                        {
+                            "value": "FRONT_FOG_LIGHTS",
+                            "label": "Nebelscheinwerfer"
+                        },
+                        {
+                            "value": "COLLISION_AVOIDANCE",
+                            "label": "Notbremsassistent"
+                        },
+                        {
+                            "value": "PANORAMIC_GLASS_ROOF",
+                            "label": "Panoramadach"
+                        },
+                        {
+                            "value": "AUTOMATIC_RAIN_SENSOR",
+                            "label": "Regensensor"
+                        },
+                        {
+                            "value": "TIRE_PRESSURE_MONITORING",
+                            "label": "Reifendruckkontrolle"
+                        },
+                        {
+                            "value": "HEADLIGHT_WASHER_SYSTEM",
+                            "label": "Scheinwerferreinigung"
+                        },
+                        {
+                            "value": "SUNROOF",
+                            "label": "Schiebedach"
+                        },
+                        {
+                            "value": "KEYLESS_ENTRY",
+                            "label": "Schlüssellose Zentralverriegelung (Keyless)"
+                        },
+                        {
+                            "value": "POWER_ASSISTED_STEERING",
+                            "label": "Servolenkung"
+                        },
+                        {
+                            "value": "SUMMER_TIRES",
+                            "label": "Sommerreifen"
+                        },
+                        {
+                            "value": "PERFORMANCE_HANDLING_SYSTEM",
+                            "label": "Sportfahrwerk"
+                        },
+                        {
+                            "value": "SPORT_PACKAGE",
+                            "label": "Sportpaket"
+                        },
+                        {
+                            "value": "LANE_DEPARTURE_WARNING",
+                            "label": "Spurhalteassistent"
+                        },
+                        {
+                            "value": "STEEL_WHEELS",
+                            "label": "Stahlfelgen"
+                        },
+                        {
+                            "value": "START_STOP_SYSTEM",
+                            "label": "Start\u002FStopp-Automatik"
+                        },
+                        {
+                            "value": "BLIND_SPOT_MONITOR",
+                            "label": "Totwinkelassistent"
+                        },
+                        {
+                            "value": "TRACTION_CONTROL_SYSTEM",
+                            "label": "Traktionskontrolle"
+                        },
+                        {
+                            "value":"TRA…
