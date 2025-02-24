@@ -7,4 +7,4 @@ The script gives the scraped data in two formats:
 1. Sqlite3  
 2. jason
 
-Other formats also can easily be made.
+Other formats also can be easily made.
