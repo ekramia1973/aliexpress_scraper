@@ -66,10 +66,15 @@ class SQLiteWriter:
             id TEXT NOT NULL PRIMARY KEY,
             skuid TEXT Not NULL,
             title TEXT NOT NULL,
-            offer_price REAL,
+            main_image TEXT,
+            url TEXT NOT NULL,
             sale_price REAL,
             original_price REAL,
+            discount REAL,
             currency CHAR(3) NOT NULL,
+            trade_count INTEGER,
+            store_name TEXT,
+            store_url TEXT,
             star_rating REAL,
             number_reviews INTEGER,
             total_sales TEXT,
@@ -112,7 +117,8 @@ class SQLiteWriter:
                     update_args.append(item[key])  # Always update last_scrape_date
                 else:
                     # Only update if the value differs
-                    if item[key] != existing_record[key]:
+                    existing_value = existing_record[key]  # Access the existing value by key
+                    if item[key] != existing_value:
                         update_columns.append(f"{key} = ?")
                         update_args.append(item[key])
 
@@ -138,3 +144,62 @@ class SQLiteWriter:
                 self.logger.error(f"Error inserting new record with id: {item['id']} - {e}")
                 raise
 
+
+import json
+import os
+
+class JsonWriter:
+    def __init__(self, filename="products.json"):
+        self.filename = filename
+        self.data_cache = []
+        self.batch_size = 10  # Adjust batch size as needed
+        # Ensure the file exists
+        if not os.path.exists(self.filename):
+            with open(self.filename, "w") as file:
+                json.dump([], file)
+    
+    def process_item(self, item, spider):
+        try:
+            # Convert images field from JSON string to list if necessary
+            if isinstance(item.get("images"), str):
+                try:
+                    item["images"] = json.loads(item["images"])
+                except json.JSONDecodeError:
+                    spider.logger.error("Error decoding images field to list")
+                    item["images"] = []
+            
+            # Read existing data
+            with open(self.filename, "r") as file:
+                existing_data = json.load(file)
+            
+            # Check if item already exists
+            product_index = next((i for i, prod in enumerate(existing_data) if prod.get("id") == item["id"]), None)
+            
+            if product_index is not None:
+                # Check if any field has changed
+                existing_product = existing_data[product_index]
+                if any(existing_product.get(k) != item[k] for k in item):
+                    existing_data[product_index] = item  # Update record
+            else:
+                self.data_cache.append(item)  # Add new record to cache
+            
+            # Save when cache reaches batch size
+            if len(self.data_cache) >= self.batch_size:
+                self._flush_data(existing_data)
+        except Exception as e:
+            spider.logger.error(f"Error processing item: {e}")
+        return item
+    
+    def _flush_data(self, existing_data):
+        try:
+            # Append cached data
+            existing_data.extend(self.data_cache)
+            
+            # Write back to file
+            with open(self.filename, "w") as file:
+                json.dump(existing_data, file, indent=4)
+            
+            # Clear cache
+            self.data_cache = []
+        except Exception as e:
+            print(f"Error saving batch data: {e}")
