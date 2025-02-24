@@ -82,6 +82,10 @@ class AliexpressSpider(scrapy.Spider):
         self.query = query.strip()
         self.parsed_query = urlparse(self.query)
         self.prefix, self.domain = self.parsed_query.netloc.split('.', 1)
+        self.total_results = None
+        self.page_size = None
+        self.total_pages = None
+
         self.browsers_list = [
                                  "chrome99", "chrome100", "chrome101", "chrome104", "chrome107", "chrome110",
                                  "chrome116", "chrome119"
@@ -137,9 +141,8 @@ class AliexpressSpider(scrapy.Spider):
             print("no matches found!")
             return
         try:
-            # json_extract = chompjs.parse_js_objects(script)
-            extract = "{" + match.group(1).rsplit('}', 1)[0].strip()
-            extract = json.loads(extract)
+            extract_ = "{" + match.group(1).rsplit('}', 1)[0].strip()
+            extract = json.loads(extract_)
         except Exception as e:
             spider.logger.error(f"Error parsing JS objects: {e}")
             return
@@ -147,18 +150,23 @@ class AliexpressSpider(scrapy.Spider):
         try:
             records = jmespath.search("data.root.fields.mods.itemList.content", extract)
             current_page = jmespath.search("data.root.fields.pageInfo.page", extract)
+            self.total_results = jmespath.search("data.root.fields.pageInfo.totalResults", extract) if not self.total_results else self.total_results
+            self.page_size = jmespath.search("data.root.fields.pageInfo.pageSize", extract) if not self.page_size else self.page_size 
+            self.total_pages = self.total_results // self.page_size + self.total_results % self.page_size // 10 if not self.total_pages else self.total_pages
 
-            if records:
-                spider.logger.info(f"Processing page {current_page}...")
-                for item in self.extract_fields(records, response):
-                    yield item
+            if current_page <= self.total_pages and current_page <= 60:
+                if records:
+                    spider.logger.info(f"Processing page {current_page}...")
+                    for item in self.extract_fields(records, response):
+                        yield item
 
-                headers = response.headers
-
-                if current_page < 60:
+                    headers = response.headers
                     next_page_url = ''
-                    if 'page=' in response.url:
-                        next_page_url = re.sub(r'page=(\d+)', f'page={current_page + 1}', response.url)
+
+                    if 'page=' in self.parsed_query.query:
+                        next_page_url = re.sub(
+                            r'page=(\d+)', 
+                            lambda match: f'page={int(match.group(1)) + 1}', response.url)
                     else:
                         next_page_url = f"{response.url}&page={current_page + 1}" if '?' in response.url else f"{response.url}?page={current_page + 1}"
 
@@ -189,7 +197,7 @@ class AliexpressSpider(scrapy.Spider):
                     "currency": item["prices"]["salePrice"]["currencyCode"],
                     "trade_count": get_number(item.get("trade", {}).get("realTradeCount", 0)),
                     "store_name": item.get("store", {}).get("storeName", ""),
-                    "store_url": 'https:' + (url_:=item.get("store", {}).get("storeUrl", "")) if url_ else '',
+                    "store_url": f'https:{item.get("store", {}).get("storeUrl", "")}',
                     "star_rating": safe_float_cast(item.get("evaluation", {}).get("starRating", "")),
                     "number_reviews": None,
                     "total_sales": get_number(item.get("trade", {}).get("tradeDesc", "")),
